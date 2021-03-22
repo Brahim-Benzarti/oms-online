@@ -1,5 +1,5 @@
+<p class="logo">OMS</p>
 <ul>
-    <li class="logo">OMS</li>
     <li><a href="account.php">Inbox</a></li>
     <li><a href="friends.php">Friends</a></li>
     <li class="profile"><a href="profile.php"><?php echo($_SESSION['name']); ?></a>

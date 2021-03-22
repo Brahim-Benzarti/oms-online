@@ -31,7 +31,7 @@ if(empty($me) || empty($to)){
             if(!empty($_POST)){
                 $new_message=$_POST['text_message'];
                 if(!empty($new_message)){
-                    $date=date("Y-m-d h:i:s");
+                    $date=date("Y-m-d H:i:s");
                     $req="INSERT INTO message(Date,text,sender_id,receiver_id)
                             VALUES ('$date','$new_message',$me,$to);";
                     mysqli_query($conn, $req)or die(mysqli_error($conn));

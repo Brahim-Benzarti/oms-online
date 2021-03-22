@@ -27,32 +27,62 @@ body{
 | */
 
 /* nav */
+.logo{
+    position: absolute;
+    margin-top: -15px;
+    padding: 0px 0px 0px 15px;
+    font-size: 40px;
+    color: white;
+}
+
+
+
 nav ul, nav ul ul{
     list-style: none;
+    margin: 0;
+    padding:0;
 }
 
 nav{
-    padding: 5px 0px 5px;
+    height: 40px;
+    margin: 0;
+    padding: 15px 0px 5px;
+    font-size: 18px;
 }
-nav, nav a, nav li, nav .sign_out, nav ul ul{
+
+nav, nav a, nav ul, nav ul li, nav .sign_out, nav ul li ul{
     background-color: black;
+}
+
+nav ul{
+    position: absolute;
+    right: 15px;
 }
 
 nav li{
     float: left;
-    margin-left: 2%;
+    padding-left: 30px;
 }
+/* 
+nav li{
+    float: right;
+    padding-right: 30px;
+} */
 
 nav a,nav .sign_out{
 	text-decoration: none;
 	color:white;
+    
 }
 
-nav ul li ul{
-    width: 80px;
-    padding: 5px 10px 5px;
+nav ul ul{
     position: absolute;
+    padding: 20px 0px 0px 0px;
     visibility: hidden;
+}
+
+nav ul li ul li{
+    padding: 0px 15px 5px 15px;
 }
 
 nav ul li:hover > ul{
@@ -75,13 +105,151 @@ nav a:active,nav .sign_out:active{
     padding-top: 2%;
 }
 
+.clear_only{
+    clear:both;
+}
+
 .main{  
     margin: auto;
     width: 90%;
-    height: 680px;
-    background-color: white;
-    border-radius: 5px;
+    height: 85vh;
+    background-color: black;
+    border-radius: 10px;
+    color: white;
+    overflow: scroll;
 }
+
+.main .t0{
+    padding: 10px 0px 0px;
+    width: fit-content;
+    margin: auto;
+    font-size: 50px;
+}
+
+.main .t1{
+    float: left;
+    font-size: 70px;
+    padding: 0px 0px 0px 5%;
+}
+
+.main .t2{
+    padding: 0px 0px 0px 5%;
+}
+
+
+.main .logo_image{
+    width: 50%;
+    margin-left: 15%;
+}
+
+.main .logo_image_signing{
+    margin: auto;
+    width: 40%;
+}
+
+.main .logo_image_signing .logo_image{
+    width: block;
+}
+
+.main .signing_container{
+    border-radius: 10px;
+    border-color: white;
+    margin: auto;
+    width: 40%;
+}
+.main .signing_container:hover{
+    border-color: red;
+}
+
+/* .main .signing_container label{
+    margin: 15% 30% 0px;
+} */
+.main .choice{
+    width: 50%;
+    margin: auto;
+}
+.main .choice div{
+    float: left;
+    margin: 0px 20px;
+}
+
+.main .choice div input, .main .choice div a{
+    padding: 0;
+    margin:0;
+}
+.main .info div{
+    float: left;
+}
+
+.main .info .labels, .main .info .inputs{
+    height: 40vh;
+    width: 50%;
+}
+
+.sign_in{
+    height: 20vh;
+}
+.sign_up{
+    height: 45vh;
+}
+
+.main .info .labels label, .main .info .inputs input{
+    display: block;
+    margin: 20px 0px;
+    height: 30px;
+}
+
+.main .info .labels label{
+    font-size: 30px;
+}
+.main .info .inputs input{
+    width: 100%;
+    border-radius: 20px;
+}
+
+.main .error_message{
+    color: red;
+    width: 50%;
+    margin: auto;
+    margin-bottom: 10px;
+
+}
+
+.main label:hover{
+    color:#ff6666;
+}
+.main label:focus{
+    color: lightskyblue;
+}
+
+.main input:hover{
+
+    border-color: #ff6666;
+}
+.main input:focus{
+    border-color: lightskyblue;
+}
+
+.main .signing_container .info .inputs .sex label, .main .signing_container .info .inputs .sex input{
+    float: left;
+    margin: 0px 5px;
+    padding: 0;
+    width: fit-content;
+}
+
+.button{    
+    font-size: 20px;
+    text-decoration: none;
+    border:0;
+    color: white;
+    background-color: lightskyblue;
+}
+
+.button:hover{
+    color: white;
+    background-color: #ff6666;
+}
+
 
 .main .people{
     background-color: black;
@@ -89,6 +257,8 @@ nav a:active,nav .sign_out:active{
     height: inherit;
     float:left;
     overflow: scroll;
+    border-top-left-radius: 10px;
+    border-bottom-left-radius: 10px;
 }
 
 .main .people .person{
@@ -118,7 +288,8 @@ nav a:active,nav .sign_out:active{
     float: right;
     height: inherit;
     width: 80%;
-    
+    border-top-right-radius: 10px;
+    border-bottom-right-radius: 10px;
 }
 
 iframe{
@@ -128,5 +299,113 @@ iframe{
     width: 100%;
     margin: 0;
     padding: 0;
+    border-top-right-radius: 10px;
+    border-bottom-right-radius: 10px;
 }
 
+/* friends page */
+
+.main .connections .friends, .main .connections .requested, .main .connections .pending{
+    color: white;
+    background-color: black;    
+    overflow: scroll;
+}
+
+.main .connections div{
+    float: left;
+    width:33.3%;
+}
+
+.main .connections .person{
+
+    width: 100%;
+}
+
+.main .connections{
+    height: 90%;
+}
+
+.main .searching{
+    height: 8%;
+    margin: 10px 6vw 4px 6vw;
+    width: 90%  ;
+    border-radius: 10px;
+}
+
+.main .searching form #search{
+    height: 100%;
+    width: 80%;
+    border-radius: 10px;
+    border: 1px;
+}
+
+.main .searching #submit{
+    height: 50%;
+    width: 10%;
+    float:right;
+    margin-right: 5%;
+    border-radius: 15px;
+    background-color: white;
+    border: 1px;
+    font-size: 15.5px;
+}
+
+.main .searching #submit:hover{
+    background-color: #87cefa;
+    color: white;
+}
+
+.main .searching #submit:active{
+    background-color: #ff6666;
+    color: white;
+}
+
+.main .connections h2{
+    width: fit-content;
+    margin: auto;
+    color:#ff6666;
+}
+
+/* end friends page */
+
+/* big image */
+
+.main .with_image{
+    background-repeat: no-repeat;
+    height: 80%;
+    width: inherit;
+    margin: 0;
+    padding: 0;
+    position: fixed;
+    background-size: 35%;
+    background-image: url("../images/search_icon.png");
+    overflow: scroll;
+    background-position: bottom right;
+}
+
+/* end big image */
+
+/* profile */
+
+.main .name{
+    width: fit-content;
+    margin: auto;
+    color: #ff6666;
+    font-size: 50px;
+}
+
+.main .about, .main .profile_status{
+    margin: 15px 0px 0px 20px;
+}
+
+.main .profile_status input, .main .profile_status a{
+    margin:0;
+    padding:0;
+}
+
+.main h2{
+    color: #ff6666;
+    font-size: 40px;
+}
+
+/* end profile */

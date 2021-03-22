@@ -9,32 +9,53 @@
 
 	<body>
         <nav>
-			<li><a href="../index.html">Home</a></li>
-			<li><a href="">Account</a></li>
+			<p class="logo">OMS</p>
+			<ul>
+				<li><a href="../index.html">Home</a></li>
+				<li><a href="">Account</a></li>
+			</ul>
         </nav>
+		<div class="clear"></div>
 		<?php
 		if(empty($_SESSION['id'])){
 			if(empty($_POST['sign_in'])){?>
-				<div id="main">
-					<p class="error_message"><?php if(!empty($_SESSION['err'])){echo($_SESSION['err']);session_unset();}?></p>
+				<div class="main">
+					<div class="logo_image_signing">
+						<input class="logo_image" type="image" src="../public/images/logo.png" alt="logo">
+					</div>
+					<div class="signing_container">
 					<form action="" method="POST" onsubmit="verify_sign_in_info();">
-						<label for="email">Email:</label>
-						<input type="email" id="email" name="email" required>
-						<label for="password">Password:</label>
-						<input type="password" id="password" name="password" required>
-						<input type="submit" value="Sign In" name="sign_in">
-						<p>or <a href="sign_up.php">Sign Up</a></p>
+					<div class="info sign_in">
+						<div class="labels">
+							<label for="email">Email:</label>
+							<label for="password">Password:</label>
+						</div>
+						<div class="inputs">
+							<input type="email" id="email" name="email" required>
+							<input type="password" id="password" name="password" required>
+						</div>
+					</div>
+					<div class="clear_only"></div>
+					<p class="error_message"><?php if(!empty($_SESSION['err'])){echo($_SESSION['err']);session_unset();}?></p>
+					<div class="choice">
+						<div>
+							<input class="button" type="submit" value="Sign In" name="sign_in">
+						</div>
+						<div>
+							<a class="button" href="sign_up.php">Sign Up</a>
+						</div>
+					</div>
+					<div class="clear_only"></div>
 					</form>
+					</div>
 				</div>
 				<?php
 			}elseif(!(empty($_POST['email']) || empty($_POST['password']))){ ?>
-				<div id="main">
 					<?php
 						require 'connect.php';
 						header("Location: account.php", TRUE, 301);
 						exit();
 					?>	
-				</div>
 			<?php }
 		}else{
 			header("Location: account.php", TRUE, 301);

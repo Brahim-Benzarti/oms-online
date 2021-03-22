@@ -7,10 +7,13 @@ session_start();
         <?php require './_/head.php' ?>
     </head>
 
-    <body>
+    <body onload="correct_image();">
         <nav>
             <?php require './_/nav.php' ?>
         </nav>
+        <div class="clear"></div>
+        <div class="main">
+        <div class="with_image" id="with_image">
         <?php 
         if(isset($_SESSION['id'])){
             if(!empty($_GET['id']) && $_GET['id']!=$_SESSION['id']){
@@ -24,13 +27,15 @@ session_start();
             $res=mysqli_query($conn,$req)or die(mysqli_error($conn));
             $t=mysqli_fetch_array($res);
             ?>
-            <h1><?php echo($t['User_name']); ?></h1>
+            <h1 class="name"><?php echo($t['User_name']); ?></h1>
+            <div class="about">
             <h2>About: </h2>
             <p>Email adress: <?php echo($t['User_email']); ?></p>
             <p>Birthday: <?php echo($t['User_birthday']); ?></p>
             <?php if(!empty($t['User_phone_number'])){echo('<p>Phone number: '.$t['User_phone_number'].'</p>');}; ?>
             <?php if(!empty($t['User_sex'])){echo('<p>Sex: '.$t['User_sex'].'</p>');}; ?>
             <?php if(!empty($t['User_description'])){echo('<p>Description: '.$t['User_description'].'</p>');}; ?>
+            </div>
             <?php
             if(isset($me)){?>
                 <div class="profile_status">
@@ -49,9 +54,9 @@ session_start();
                                 if($x[1]==intval($person)){
                                     $_SESSION['to_unfriend']=$x[1];
                                     ?> 
-                                        <p>Friends</p>
-                                        <a href="./account.php?message=<?php echo($x[1]); ?>">Message</a>
-                                        <input type="submit" value="Unfriend" >
+                                        <p id="status">Friends</p>
+                                        <a class="button" href="./account.php?message=<?php echo($x[1]); ?>">Message</a>
+                                        <input class="button" type="submit" value="Unfriend" >
                                     </form>
                                     <?php
                                     $next=0;
@@ -75,8 +80,8 @@ session_start();
                                         $_SESSION['to_unfriend']=null;
                                         $_SESSION['to_delete']=$x[1];
                                         ?> 
-                                            <p>Friend request sent</p>
-                                            <input type="submit" value="Delete">
+                                            <p id="status">Friend request sent</p>
+                                            <input class="button" type="submit" value="Delete">
                                         </form>
                                         <?php
                                         $next=0;
@@ -102,8 +107,8 @@ session_start();
                                         $_SESSION['to_delete']=null;
                                         $_SESSION['to_accept']=$x[1];
                                         ?> 
-                                            <p>Pending friendship</p>
-                                            <input type="submit" value="Accept" >
+                                            <p class="button" id="status">Pending friendship</p>
+                                            <input class="button" type="submit" value="Accept" >
                                         </form>
                                         <?php
                                         $next=0;
@@ -120,13 +125,15 @@ session_start();
                         $_SESSION['to_request']=$person;
                         ?>
                         <p>Possible friendship</p>
-                        <input type="submit" value="Request" >
+                        <input class="button" type="submit" value="Request" >
                         </form>
                         <?php
                    }
                 ?>
                 </div>
             <?php } ?>
+            </div>
+            </div>
         <?php
         }else{
             header("Location: sign_in.php", TRUE, 301);
