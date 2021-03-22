@@ -55,8 +55,8 @@ session_start();
                                     $_SESSION['to_unfriend']=$x[1];
                                     ?> 
                                         <p id="status">Friends</p>
-                                        <a class="button" href="./account.php?message=<?php echo($x[1]); ?>">Message</a>
-                                        <input class="button" type="submit" value="Unfriend" >
+                                        <a id="button" href="./account.php?message=<?php echo($x[1]); ?>">Message</a>
+                                        <input id="button" type="submit" value="Unfriend" >
                                     </form>
                                     <?php
                                     $next=0;
@@ -81,7 +81,7 @@ session_start();
                                         $_SESSION['to_delete']=$x[1];
                                         ?> 
                                             <p id="status">Friend request sent</p>
-                                            <input class="button" type="submit" value="Delete">
+                                            <input id="button" type="submit" value="Delete">
                                         </form>
                                         <?php
                                         $next=0;
@@ -108,7 +108,7 @@ session_start();
                                         $_SESSION['to_accept']=$x[1];
                                         ?> 
                                             <p id="status">Pending friendship</p>
-                                            <input class="button" type="submit" value="Accept" >
+                                            <input id="button" type="submit" value="Accept" >
                                         </form>
                                         <?php
                                         $next=0;
@@ -125,7 +125,7 @@ session_start();
                         $_SESSION['to_request']=$person;
                         ?>
                         <p>Possible friendship</p>
-                        <input class="button" type="submit" value="Request" >
+                        <input id="button" type="submit" value="Request" >
                         </form>
                         <?php
                    }

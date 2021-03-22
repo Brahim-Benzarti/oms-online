@@ -54,7 +54,7 @@
 						<div class="clear_only"></div>
 						<div class="choice">
 							<div>
-								<input class="button" type="submit" value="Sign Up" name="sign_up">
+								<input id="button" type="submit" value="Sign Up" name="sign_up">
 							</div>
 						</div>
 					</form>

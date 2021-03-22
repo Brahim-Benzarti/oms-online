@@ -39,10 +39,10 @@
 					<p class="error_message"><?php if(!empty($_SESSION['err'])){echo($_SESSION['err']);session_unset();}?></p>
 					<div class="choice">
 						<div>
-							<input class="button" type="submit" value="Sign In" name="sign_in">
+							<input id="button" type="submit" value="Sign In" name="sign_in">
 						</div>
 						<div>
-							<a class="button" href="sign_up.php">Sign Up</a>
+							<a id="button" href="sign_up.php">Sign Up</a>
 						</div>
 					</div>
 					<div class="clear_only"></div>

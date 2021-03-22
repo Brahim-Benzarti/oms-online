@@ -1,6 +1,6 @@
 *{
     /* background-color: darkblue; */
-    font-family: Arial, Helvetica, sans-serif;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
 }
 
 html{
@@ -165,7 +165,7 @@ nav a:active,nav .sign_out:active{
     margin: 15% 30% 0px;
 } */
 .main .choice{
-    width: 50%;
+    width: fit-content;
     margin: auto;
 }
 .main .choice div{
@@ -237,15 +237,28 @@ nav a:active,nav .sign_out:active{
     width: fit-content;
 }
 
-.button{    
-    font-size: 20px;
+#button{    
+    font-size: 30px;
     text-decoration: none;
     border:0;
     color: white;
     background-color: lightskyblue;
+    border-radius: 15px;
+    padding: 4px 10px;
 }
 
-.button:hover{
+
+#button{    
+    font-size: 30px;
+    text-decoration: none;
+    border:0;
+    color: white;
+    background-color: lightskyblue;
+    border-radius: 15px;
+    padding: 4px 10px;
+}
+
+#button:hover{
     color: white;
     background-color: #ff6666;
 }
@@ -409,3 +422,14 @@ iframe{
 }
 
 /* end profile */
+
+/* 404 */
+
+#error{
+    color:white;
+    width: fit-content;
+    margin: auto;
+}
+
+
+/* end 404 */
