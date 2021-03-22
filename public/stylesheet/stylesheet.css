@@ -1,0 +1,132 @@
+*{
+    /* background-color: darkblue; */
+    font-family: cursive;
+}
+
+html{
+    height: 100vh;
+    background-image: linear-gradient(red, lightskyblue);
+    background-color: lightskyblue;
+}
+body{
+    margin: 0;
+}
+
+
+/* |
+| */
+
+/* scrollbar/ */
+::-webkit-scrollbar {
+    display: none;
+}
+
+/* end scrollbar */
+
+/* |
+| */
+
+/* nav */
+nav ul, nav ul ul{
+    list-style: none;
+}
+
+nav{
+    padding: 5px 0px 5px;
+}
+nav, nav a, nav li, nav .sign_out, nav ul ul{
+    background-color: black;
+}
+
+nav li{
+    float: left;
+    margin-left: 2%;
+}
+
+nav a,nav .sign_out{
+	text-decoration: none;
+	color:white;
+}
+
+nav ul li ul{
+    width: 80px;
+    padding: 5px 10px 5px;
+    position: absolute;
+    visibility: hidden;
+}
+
+nav ul li:hover > ul{
+    visibility: visible;
+}
+
+
+nav a:hover,nav .sign_out:hover{
+	color:red;
+}
+
+nav a:active,nav .sign_out:active{
+	color:lightskyblue;
+}
+
+/* end nav */
+
+.clear{
+	clear:both;
+    padding-top: 2%;
+}
+
+.main{  
+    margin: auto;
+    width: 90%;
+    height: 680px;
+    background-color: white;
+    border-radius: 5px;
+}
+
+.main .people{
+    background-color: black;
+    width: 20%;
+    height: inherit;
+    float:left;
+    overflow: scroll;
+}
+
+.main .people .person{
+    padding: 5px 10px;
+}
+
+.main .people .person:hover, .main .people .person:hover > a{
+    background-color: white;
+    color: #ff6666;
+}
+
+.main .people .person a:active{
+    color: #87cefa;
+    text-decoration: none;
+}
+
+.main .people .person a{
+    width: 100%;
+    color: white;
+    font-size: 20px;
+    text-decoration: none;
+}
+
+
+
+.main .message_box{
+    float: right;
+    height: inherit;
+    width: 80%;
+    
+}
+
+iframe{
+    background-size: 100%;
+    background-image: url("../images/messages_background.jpg");
+    height: inherit;
+    width: 100%;
+    margin: 0;
+    padding: 0;
+}
+
