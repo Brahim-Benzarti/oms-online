@@ -107,7 +107,7 @@ session_start();
                                         $_SESSION['to_delete']=null;
                                         $_SESSION['to_accept']=$x[1];
                                         ?> 
-                                            <p class="button" id="status">Pending friendship</p>
+                                            <p id="status">Pending friendship</p>
                                             <input class="button" type="submit" value="Accept" >
                                         </form>
                                         <?php
