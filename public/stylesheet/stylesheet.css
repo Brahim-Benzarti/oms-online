@@ -316,6 +316,10 @@ nav a:active,nav .sign_out:active{
 iframe{
     background-size: 100%;
     background-image: url("../images/messages_background.jpg");
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    background-repeat: no-repeat;
     height: inherit;
     width: 100%;
     margin: 0;
