@@ -44,7 +44,7 @@ session_start();
                 }?>
             </div>
             <div class="message_box">
-                <iframe src="<?php if(isset($_GET['message'])){echo('./messaging.php?to='.$_GET['message'].'#texting_box');} ?>" frameborder="0" name="messaging_box"></iframe>
+                <iframe id="iframe_box" src="<?php if(isset($_GET['message'])){echo('./messaging.php?to='.$_GET['message'].'#texting_box');} ?>" frameborder="0" name="messaging_box"></iframe>
             </div>
         </div>
         
