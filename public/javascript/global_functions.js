@@ -21,3 +21,10 @@ function correct_image(){
     // }
     document.getElementById('with_image').style.backgroundSize = "24%";
 }
+
+
+function change_picture(){
+    var back_ind=Math.floor(Math.random() * 8)+1;
+    var ind=back_ind.toString()
+    document.body.style.backgroundImage="url('../public/images/"+ind+".png')";
+}

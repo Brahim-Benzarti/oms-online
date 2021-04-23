@@ -34,7 +34,7 @@ session_start();
                             <div class="profile_picture_container_inbox">
                                 <div class="profile_picture_inbox" <?php if($t[2]<>''){ ?>style="background-image: url(<?php echo('../public/images/users/'.$t[2]); ?>);" <?php }; ?>></div>
                             </div>
-                            <div class="text_beside_picture">
+                            <div class="text_beside_picture" onclick="change_picture();">
                                 <a href="./messaging.php?to=<?php echo($t[1]);?>#texting_box" target="messaging_box" onclick="talking_with('<?php echo($t[1]);?>');"><?php echo($t[0]);?></a>
                             </div>
                         </div>
