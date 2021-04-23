@@ -24,7 +24,7 @@ function correct_image(){
 
 
 function change_picture(){
-    var back_ind=Math.floor(Math.random() * 8)+1;
+    var back_ind=Math.floor(Math.random() * 10)+1;
     var ind=back_ind.toString()
     document.getElementById('iframe_box').style.backgroundImage="url('../public/images/"+ind+".jpg')";
 }
