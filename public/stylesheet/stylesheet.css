@@ -320,6 +320,7 @@ iframe{
     background-position: center;
     background-attachment: fixed;
     background-repeat: no-repeat;
+    filter: blur(5px);
     height: inherit;
     width: 100%;
     margin: 0;
