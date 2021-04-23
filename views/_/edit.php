@@ -37,7 +37,7 @@ if(isset($_SESSION['id'])){
             }else{
                 $req="UPDATE users SET User_picture='$file_name' WHERE User_id=$me;";
                 mysqli_query($conn,$req)or die(mysqli_error($conn));
-                move_uploaded_file($_FILES['profile_picture']['tmp_name'], $_SERVER['DOCUMENT_ROOT']."/OMS/public/images/users/".$file_name)or die("shit");
+                move_uploaded_file($_FILES['profile_picture']['tmp_name'], "../../public/images/users/".$file_name)or die("error");
             }
         }
     }
