@@ -33,14 +33,20 @@ session_start();
                     $res=mysqli_query($conn,$req)or die(mysqli_error($conn));
                     if(mysqli_num_rows($res)!=0){
                         while($t=mysqli_fetch_array($res)){
-                            $req="select u.User_name,u.User_id from users as u,contact as c where c.user_id=$t[1] and c.contact_id=$me and u.user_id=c.user_id;";
+                            $req="select u.User_name,u.User_id,u.User_picture from users as u,contact as c where c.user_id=$t[1] and c.contact_id=$me and u.user_id=c.user_id;";
                             $res2=mysqli_query($conn,$req)or die(mysqli_error($conn));
                             if(mysqli_num_rows($res2)!=0){
                                 $x=mysqli_fetch_array($res2);
                                 ?>
                                     <div class="person">
-                                        <a href="profile.php?id=<?php echo($x[1]);?>"><?php echo($x[0]);?></a>
+                                        <div class="profile_picture_container_inbox">
+                                            <div class="profile_picture_inbox" <?php if($x[2]<>''){ ?>style="background-image: url(<?php echo('../public/images/users/'.$x[2]); ?>);" <?php }; ?>></div>
+                                        </div>
+                                        <div class="text_beside_picture">
+                                            <a href="profile.php?id=<?php echo($x[1]);?>"><?php echo($x[0]);?></a>
+                                        </div>
                                     </div>
+                                    <div class="clear_only"></div>
                                 <?php
                             }
                         }
@@ -57,13 +63,19 @@ session_start();
                             $req="select u.User_name,u.User_id from users as u,contact as c where c.user_id=$t[1] and c.contact_id=$me and u.user_id=c.user_id;";
                             $res2=mysqli_query($conn,$req)or die(mysqli_error($conn));
                             if(mysqli_num_rows($res2)==0){
-                                $req="select User_name,User_id from users where User_id=$t[1];";
+                                $req="select User_name,User_id,User_picture from users where User_id=$t[1];";
                                 $res3=mysqli_query($conn,$req)or die(mysqli_error($conn));
                                 $x=mysqli_fetch_array($res3);
                                 ?>
                                     <div class="person">
-                                        <a href="profile.php?id=<?php echo($x[1]);?>"><?php echo($x[0]);?></a>
-                                    </div> 
+                                        <div class="profile_picture_container_inbox">
+                                            <div class="profile_picture_inbox" <?php if($x[2]<>''){ ?>style="background-image: url(<?php echo('../public/images/users/'.$x[2]); ?>);" <?php }; ?>></div>
+                                        </div>
+                                        <div class="text_beside_picture">
+                                            <a href="profile.php?id=<?php echo($x[1]);?>"><?php echo($x[0]);?></a>
+                                        </div>
+                                    </div>
+                                    <div class="clear_only"></div>
                                 <?php
 
                             }
@@ -81,13 +93,19 @@ session_start();
                             $req="select u.User_name,u.User_id from users as u,contact as c where c.user_id=$me and c.contact_id=$t[0] and u.user_id=c.user_id;";
                             $res2=mysqli_query($conn,$req)or die(mysqli_error($conn));
                             if(mysqli_num_rows($res2)==0){
-                                $req="select User_name,User_id from users where User_id=$t[0];";
+                                $req="select User_name,User_id,User_picture from users where User_id=$t[0];";
                                 $res3=mysqli_query($conn,$req)or die(mysqli_error($conn));
                                 $x=mysqli_fetch_array($res3);
                                 ?>
                                     <div class="person">
-                                        <a href="profile.php?id=<?php echo($x[1]);?>"><?php echo($x[0]);?></a>
+                                        <div class="profile_picture_container_inbox">
+                                            <div class="profile_picture_inbox" <?php if($x[2]<>''){ ?>style="background-image: url(<?php echo('../public/images/users/'.$x[2]); ?>);" <?php }; ?>></div>
+                                        </div>
+                                        <div class="text_beside_picture">
+                                            <a href="profile.php?id=<?php echo($x[1]);?>"><?php echo($x[0]);?></a>
+                                        </div>
                                     </div>
+                                    <div class="clear_only"></div>
                                 <?php
 
                             }

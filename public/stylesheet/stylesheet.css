@@ -199,12 +199,19 @@ nav a:active,nav .sign_out:active{
     height: 30px;
 }
 
+.main .info .inputs .sex{
+    display: block;
+    margin-bottom: 20px;
+    height: 30px;
+}
+
 .main .info .labels label{
     font-size: 30px;
 }
 .main .info .inputs input{
     width: 100%;
     border-radius: 20px;
+    height: 25px;
 }
 
 .main .error_message{
@@ -276,20 +283,21 @@ nav a:active,nav .sign_out:active{
 
 .main .people .person{
     padding: 5px 10px;
+    height:50px;
 }
 
-.main .people .person:hover, .main .people .person:hover > a{
+.main .people .person:hover, .main .people .person:hover > .text_beside_picture a{
     background-color: white;
     color: #ff6666;
 }
 
-.main .people .person a:active{
+.main .people .person .text_beside_picture a:active{
     color: #87cefa;
     text-decoration: none;
 }
 
 .main .people .person a{
-    width: 100%;
+    /* width: 100%; */
     color: white;
     font-size: 20px;
     text-decoration: none;
@@ -330,7 +338,6 @@ iframe{
 }
 
 .main .connections .person{
-
     width: 100%;
 }
 
@@ -433,3 +440,50 @@ iframe{
 
 
 /* end 404 */
+
+/* profile picture */
+
+.profile_picture_container{
+    margin:auto;
+    width:10vw;
+    height:10vw;
+    margin-top: 3vh;
+    margin-bottom: 3vh;
+}
+
+.profile_picture, .profile_picture_inbox{
+    background-image: url("../images/dummy.png");
+    height: inherit;
+    width: inherit;
+    border-radius: 50%;
+    background-size: cover;
+    background-position: center;
+}
+
+.person div{
+    float:left;
+}
+
+.profile_picture_container_inbox{
+    width:25%;
+}
+
+.text_beside_picture{
+    width: 75%;
+    padding: 12px 0;
+}
+
+.profile_picture_inbox{
+    width: 3vw;
+    height: 3vw;
+}
+
+.main .connections div .profile_picture_container_inbox{
+    width:15%;
+}
+.main .connections div .profile_picture_inbox{
+    width:80%;
+}
+
+
+/* end profile picture */

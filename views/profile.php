@@ -27,6 +27,9 @@ session_start();
             $res=mysqli_query($conn,$req)or die(mysqli_error($conn));
             $t=mysqli_fetch_array($res);
             ?>
+            <div class="profile_picture_container">
+                <div class="profile_picture" <?php if($t['User_picture']<>''){ ?>style="background-image: url(<?php echo('../public/images/users/'.$t['User_picture']); ?>);" <?php }; ?>></div>
+            </div>
             <h1 class="name"><?php echo($t['User_name']); ?></h1>
             <div class="about">
             <h2>About: </h2>
@@ -34,7 +37,7 @@ session_start();
             <p>Birthday: <?php echo($t['User_birthday']); ?></p>
             <?php if(!empty($t['User_phone_number'])){echo('<p>Phone number: '.$t['User_phone_number'].'</p>');}; ?>
             <?php if(!empty($t['User_sex'])){echo('<p>Sex: '.$t['User_sex'].'</p>');}; ?>
-            <?php if(!empty($t['User_description'])){echo('<p>Description: '.$t['User_description'].'</p>');}; ?>
+            <?php if(!empty($t['User_description'])){echo('<p>Description: '.$t['User_description'].'</p>');};?>
             </div>
             <?php
             if(isset($me)){?>
@@ -131,7 +134,13 @@ session_start();
                    }
                 ?>
                 </div>
-            <?php } ?>
+            <?php }else{
+                ?>
+                <div class="profile_status">
+                    <a id="button" href="edit.php">Edit Information</a>
+                </div>
+                <?php
+            }; ?>
             </div>
             </div>
         <?php

@@ -52,7 +52,7 @@
 				<?php
 			}elseif(!(empty($_POST['email']) || empty($_POST['password']))){ ?>
 					<?php
-						require 'connect.php';
+						require './_/connect.php';
 						header("Location: account.php", TRUE, 301);
 						exit();
 					?>	

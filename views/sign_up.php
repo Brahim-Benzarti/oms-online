@@ -64,7 +64,7 @@
 			}elseif(!(empty($_POST['email']) || empty($_POST['password']) || empty($_POST['name']) || empty($_POST['pn']) || empty($_POST['sex']) || empty($_POST['bd']))){ ?>
 				<div id="main">
 					<?php
-						require 'connect.php';
+						require './_/connect.php';
 						header("Location: account.php", TRUE, 301);
 						exit();
 					?>	
