@@ -8,8 +8,8 @@ if(!(empty($_POST['name']) && empty($_POST['pn']) && empty($_POST['bd']) && empt
 	$pn=$_POST['pn'];
 	$sex=$_POST['sex'];
 	$bd=$_POST['bd'];
-	$req="	INSERT INTO users(User_name,User_password,User_email,User_phone_number,User_sex,User_birthday)
-			VALUES ('$name','$password','$email','$pn','$sex','$bd');";
+	$req="	INSERT INTO users(User_name,User_password,User_email,User_phone_number,User_sex,User_birthday,User_picture)
+			VALUES ('$name','$password','$email','$pn','$sex','$bd','');";
 	$res=mysqli_query($conn, $req)or die(mysqli_error($conn));
 };
 
