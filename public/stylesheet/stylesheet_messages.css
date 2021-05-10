@@ -148,13 +148,14 @@ body{
 .texting_area .file_picture label{
     height: 100%;
     width: 30px;
-    background-image: url("../images/add_picture_message_icon.png");
+    background-image: url("../images/add_picture_message_icon_outoffocus.png");
     background-repeat: no-repeat;
     background-size: cover;
 }
 
 .texting_area .file_picture label:hover{
     cursor: pointer;
+    background-image: url("../images/add_picture_message_icon.png");
 }
 
 .texting_area #submit{
