@@ -33,7 +33,7 @@ if(empty($me) || empty($to)){
                                 header("location: error.html", TRUE,301);
                                 exit();
                             }else{
-                                move_uploaded_file($_FILES['file_upload']['tmp_name'], $_SERVER['DOCUMENT_ROOT']."/OMS/public/images/messages/".$file_name);
+                                move_uploaded_file($_FILES['file_upload']['tmp_name'], $_SERVER['DOCUMENT_ROOT']."/public/images/messages/".$file_name);
                             }
                         }
                     }
