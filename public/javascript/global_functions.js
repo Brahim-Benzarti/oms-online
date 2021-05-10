@@ -24,7 +24,25 @@ function correct_image(){
 
 
 function change_picture(){
-    var back_ind=Math.floor(Math.random() * 10)+1;
+    var back_ind=Math.floor(Math.random() * 8)+1;
     var ind=back_ind.toString()
     document.getElementById('iframe_box').style.backgroundImage="url('../public/images/"+ind+".jpg')";
+}
+
+messaging_features=(show)=>{
+    // var docc=document.getElementById('text_features').style.display;
+    if(show){
+        document.getElementById('text_features').style.display= "flex";
+    }
+    else{
+        document.getElementById('text_features').style.display= "none";
+    }
+}
+
+ref_to_sen=()=>{
+    if(document.getElementById('message').value!=''){
+        document.getElementById('submit').value="Send";
+    }else{
+        document.getElementById('submit').value="Refresh";
+    }
 }

@@ -1,10 +1,29 @@
 <?php
 
-$servername="freedb.tech";
-$username="freedbtech_omsadminproject";
-$password="brahimtheadmin";
-$dbname="freedbtech_oms";
+$servername="localhost";
+$username="root";
+$password="";
+$dbname="oms";
 
 $conn=mysqli_connect($servername, $username, $password, $dbname);
+//creating database if doesn't exits.. 
+if(!$conn){
+    $pre_conn=mysqli_connect($servername, $username, $password);
+    mysqli_query($pre_conn,"CREATE Database oms;")or die("wtf");
+    $conn=mysqli_connect($servername, $username, $password, $dbname);
+    if(mysqli_multi_query($conn,file_get_contents("../oms.sql"))){
+        do {
+            // Store first result set
+            if ($result = mysqli_store_result($conn)) {
+                $result -> free_result();
+            };
+            // if there are more result-sets, the print a divider
+            if (mysqli_more_results($conn)) {
+                continue;
+            };
+             //Prepare next result set
+          } while (mysqli_next_result($conn));
+    }
+}
 
 ?>

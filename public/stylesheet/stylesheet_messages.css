@@ -96,30 +96,73 @@ body{
     color: white;
 }
 
+.messages .picture_message{
+    height: 500px;
+    width: 500px;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
 .texting_area{
-    height: 50px;
+    height: 30px;
     position: fixed;
     bottom: 0;
     margin: 4px 4vw 4px 6vw;
+    padding: 5px 0px;
     width: 90vw;
     border-radius: 10px;
 }
 
+.texting_area form *{
+    float: left;
+}
+
 .texting_area #message{
     height: 100%;
-    width: 80%;
+    width: 80%;/*  decrease this if you added some features.. tho i doubt that xD */
     border-radius: 10px;
     border: 1px;
 }
 
+.texting_area #message:focus{
+    width: 90%;
+}
+
+.texting_area .text_features{
+    height: 100%;
+    width: 10%; /* this width + 70% of the text + 10% for the submit */
+    display: flex;
+    justify-content: center;
+}
+
+.texting_area #file_upload{
+    display: none;
+}
+
+
+.texting_area .file_picture{
+    width: fit-content;
+    height: 100%;
+}
+
+.texting_area .file_picture label{
+    height: 100%;
+    width: 30px;
+    background-image: url("../images/add_picture_message_icon.png");
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.texting_area .file_picture label:hover{
+    cursor: pointer;
+}
+
 .texting_area #submit{
     height: 100%;
-    width: 15%;
-    float:right;
+    width: 10%;
     border-radius: 15px;
-    margin-right: 2.5%;
     background-color: white;
-    border: 1px;
+    border: 0px;
     font-size: 20px;
 }
 

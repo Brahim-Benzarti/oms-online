@@ -1,11 +1,11 @@
 -- phpMyAdmin SQL Dump
--- version 5.0.4
+-- version 5.1.0
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Mar 19, 2021 at 05:25 AM
--- Server version: 10.4.17-MariaDB
--- PHP Version: 8.0.0
+-- Generation Time: Apr 24, 2021 at 09:42 PM
+-- Server version: 10.4.18-MariaDB
+-- PHP Version: 8.0.3
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -20,7 +20,7 @@ SET time_zone = "+00:00";
 --
 -- Database: `oms`
 --
-CREATE Database oms;
+
 -- --------------------------------------------------------
 
 --
@@ -37,15 +37,16 @@ CREATE TABLE `contact` (
 --
 
 INSERT INTO `contact` (`user_id`, `contact_id`) VALUES
-(9, 9),
 (9, 12),
 (9, 14),
+(9, 15),
 (12, 9),
 (12, 13),
 (12, 15),
 (13, 14),
 (14, 9),
 (14, 13),
+(15, 9),
 (15, 12);
 
 -- --------------------------------------------------------
@@ -72,10 +73,10 @@ INSERT INTO `message` (`Message_id`, `Date`, `file_format`, `file_location`, `te
 (11, '2021-01-16 10:57:07', NULL, NULL, 'Hey!', 12, 9),
 (12, '2021-01-16 10:57:17', NULL, NULL, 'How are you today', 12, 9),
 (13, '2021-01-16 10:58:02', NULL, NULL, 'Morning!!', 9, 12),
-(14, '2021-01-16 10:58:36', NULL, NULL, 'Was waiting for your text message', 9, 12),
+(14, '2021-01-16 10:58:36', NULL, NULL, 'Was waiting for your text', 9, 12),
 (15, '2021-01-16 10:58:47', NULL, NULL, 'Hey there', 9, 15),
 (16, '2021-01-16 10:59:18', NULL, NULL, 'Did you think about it?', 9, 15),
-(17, '2021-01-16 10:59:59', NULL, NULL, 'I need more friends man', 14, 13),
+(17, '2021-01-16 10:59:59', NULL, NULL, 'Suuuuup', 14, 13),
 (18, '2021-01-16 11:00:11', NULL, NULL, 'Hook me up!', 14, 13),
 (19, '2021-01-16 11:00:46', NULL, NULL, 'What', 15, 9),
 (20, '2021-01-16 11:01:18', NULL, NULL, 'Think about what ', 15, 9),
@@ -105,20 +106,21 @@ CREATE TABLE `users` (
   `User_email` varchar(99) NOT NULL,
   `User_phone_number` varchar(15) DEFAULT NULL,
   `User_sex` enum('Male','Female','Other') DEFAULT NULL,
-  `User_age` int(3) NOT NULL,
-  `User_description` varchar(200) DEFAULT NULL
+  `User_birthday` date NOT NULL,
+  `User_description` varchar(200) DEFAULT NULL,
+  `User_picture` varchar(30) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
 -- Dumping data for table `users`
 --
 
-INSERT INTO `users` (`User_id`, `User_name`, `User_password`, `User_email`, `User_phone_number`, `User_sex`, `User_age`, `User_description`) VALUES
-(9, 'Brahim Benzarti', 'brahim', 'brahim.al.benzarti@gmail.com', '', 'Male', 20, 'Tired..'),
-(12, 'Gerald Falco', 'gerald', 'shaun2014@hotmail.com', '501-765-6578', 'Male', 25, ''),
-(13, 'Ollie Hall', 'hall', 'lillie_brek@yahoo.com', '717-776-7830', 'Male', 54, 'Travel nerd. Devoted tv guru. Music fanatic. Amateur bacon enthusiast. Unapologetic internet ninja.'),
-(14, 'Valerie Leaf', 'leaf', 'whitney.hamm@yahoo.com', '989-534-1059', 'Male', 39, 'Internet lover. Zombie aficionado. Music scholar. Total organizer. Bacon nerd. Entrepreneur.'),
-(15, 'Jennifer Rangel', 'jennifer', 'chandler.keebl@hotmail.com', '517-698-6816', 'Female', 50, 'Subtly charming tv scholar. Music trailblazer. Unapologetic creator. Incurable alcohol buff.');
+INSERT INTO `users` (`User_id`, `User_name`, `User_password`, `User_email`, `User_phone_number`, `User_sex`, `User_birthday`, `User_description`, `User_picture`) VALUES
+(9, 'Brahim Benzarti', 'brahim', 'brahim.al.benzarti@gmail.com', '', 'Male', '0000-00-00', 'Tired..', '2021113213906@9.jpg'),
+(12, 'Gerald Falco', 'gerald', 'shaun2014@hotmail.com', '501-765-6578', 'Male', '0000-00-00', '', ''),
+(13, 'Ollie Hall', 'hall', 'lillie_brek@yahoo.com', '717-776-7830', 'Male', '0000-00-00', 'Travel nerd. Devoted tv guru. Music fanatic. Amateur bacon enthusiast. Unapologetic internet ninja.', ''),
+(14, 'Valerie Leaf', 'leaf', 'whitney.hamm@yahoo.com', '989-534-1059', 'Male', '0000-00-00', 'Internet lover. Zombie aficionado. Music scholar. Total organizer. Bacon nerd. Entrepreneur.', ''),
+(15, 'Jennifer Rangel', 'jennifer', 'chandler.keebl@hotmail.com', '517-698-6816', 'Female', '0000-00-00', 'Subtly charming tv scholar. Music trailblazer. Unapologetic creator. Incurable alcohol buff.', '');
 
 --
 -- Indexes for dumped tables
