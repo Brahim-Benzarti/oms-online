@@ -9,7 +9,7 @@
 
 	<body>
         <nav>
-			<p class="logo">OMS</p>
+			<div class="logo"></div>
 			<ul>
 				<li><a href="../index.html">Home</a></li>
 				<li><a href="">Account</a></li>
@@ -20,9 +20,7 @@
 		if(empty($_SESSION['id'])){
 			if(empty($_POST['sign_in'])){?>
 				<div class="main">
-					<div class="logo_image_signing">
-						<input class="logo_image" type="image" src="../public/images/logo.png" alt="logo">
-					</div>
+					<div class="t0"></div>
 					<div class="signing_container">
 					<form action="" method="POST" onsubmit="verify_sign_in_info();">
 					<div class="info sign_in">

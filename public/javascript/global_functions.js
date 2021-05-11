@@ -1,9 +1,9 @@
 previous_id="";
 function talking_with(id){
     if(previous_id!=""){
-        document.getElementById(previous_id).style.background= "black";
+        document.getElementById(previous_id).classList.remove("currently_talking");
     }
-    document.getElementById(id).style.background= "#b3b3b3";
+    document.getElementById(id).classList.add("currently_talking");
     previous_id=id; 
 };
 
