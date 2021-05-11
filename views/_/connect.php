@@ -26,6 +26,8 @@ if(mysqli_num_rows($res)==0){
 	}else{
 		$_SESSION["name"]=$t[1];
 		$_SESSION['id']=$t[0];
+		$req="UPDATE users SET User_status=1 WHERE User_id=$t[0];";
+		mysqli_query($conn,$req)or die(mysqli_error($conn));
 	}
 };
 ?>

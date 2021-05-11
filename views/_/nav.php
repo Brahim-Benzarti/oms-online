@@ -1,4 +1,4 @@
-<p class="logo">OMS</p>
+<div class="logo"></div>
 <ul>
     <li><a href="account.php">Inbox</a></li>
     <li><a href="friends.php">Friends</a></li>

@@ -37,11 +37,7 @@ if(isset($_SESSION['id'])){
             }else{
                 $req="UPDATE users SET User_picture='$file_name' WHERE User_id=$me;";
                 mysqli_query($conn,$req)or die(mysqli_error($conn));
-                if(!move_uploaded_file($_FILES['profile_picture']['tmp_name'], $_SERVER['DOCUMENT_ROOT']."/public/images/users/".$file_name)){
-                    $_SESSION['err']="There was a problem uploading the file to Heroku.. Heroku Doesn't support more_uploaded_file().. I nned an AWS account to use S3 bucket instead";
-                    header("location: edit.php", TRUE,301);
-                    exit();
-                }
+                move_uploaded_file($_FILES['profile_picture']['tmp_name'], $_SERVER['DOCUMENT_ROOT']."/OMS/public/images/users/".$file_name)or die("error");
             }
         }
     }
