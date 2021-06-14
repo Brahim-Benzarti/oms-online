@@ -16,13 +16,19 @@ session_start();
         <div class="with_image" id="with_image">
         <?php 
         if(isset($_SESSION['id'])){
+            require '../dbcon.php';
             if(!empty($_GET['id']) && $_GET['id']!=$_SESSION['id']){
                 $person=$_GET['id'];
                 $me=$_SESSION['id'];
+                $req="select * from users where User_id=$person;";
+                $res=mysqli_query($conn,$req)or die(mysqli_error());
+                if(mysqli_num_rows($res)==0){
+                    header("Location: error.html", TRUE, 301);
+                    exit();
+                }
             }else{
                 $person=$_SESSION['id'];
             };
-            require '../dbcon.php';
             $req="select * from users where User_id=$person;";
             $res=mysqli_query($conn,$req)or die(mysqli_error($conn));
             $t=mysqli_fetch_array($res);
