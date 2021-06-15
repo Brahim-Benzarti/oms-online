@@ -23,7 +23,7 @@ session_start();
                 $req="select * from users where User_id=$person;";
                 $res=mysqli_query($conn,$req)or die(mysqli_error());
                 if(mysqli_num_rows($res)==0){
-                    header("Location: error.html", TRUE, 301);
+                    header("Location: error.php", TRUE, 301);
                     exit();
                 }
             }else{

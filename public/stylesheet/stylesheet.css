@@ -359,6 +359,7 @@ iframe{
     color: white;
 }
 
+
 .main .right, .main .left{
     margin-top: 6vh;
     float: left;
@@ -368,13 +369,16 @@ iframe{
 
 .main .right{
     position: fixed;
-    right: 0;
-    margin-right: 7vw;
-    background-image: url("../images/laptop_preview.png");
-    background-repeat: no-repeat;
-    background-size: contain;
-    background-position: center;
-    height: 70%;
+    right: 5vw;
+    margin-top: 0;
+    height: inherit;
+    padding-right: 8vw;
+}
+
+.main .right video{
+    height: inherit;
+    margin: auto;
+    width: fit-content;
 }
 
 /* friends page */
@@ -538,8 +542,6 @@ iframe{
     width:80%;
 }
 
-.connected{
-}
 
 .status{
     border-radius: 50%;
@@ -554,3 +556,26 @@ iframe{
 }
 
 /* end profile picture */
+
+/* error page */
+
+.errorMessage{
+    margin: auto;
+    width: fit-content;
+    margin-top: 55vh;
+}
+
+.error404{
+    font-size: 8vh;
+}
+
+.errorMessage.nomar{
+    margin-top: 0;
+}
+
+.main.errorImage{
+    background-image: url("../images/error.png");
+    background-repeat: no-repeat;
+    background-size: 50vw 60vh;
+    background-position: center;
+}

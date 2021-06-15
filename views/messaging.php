@@ -8,13 +8,13 @@ $to=$_GET['to'];
 <script type="text/javascript" src="../public/javascript/global_functions.js"></script>
 <?php 
 if(empty($me) || empty($to)){
-    header("Location: error.html", TRUE, 301);
+    header("Location: error.php", TRUE, 301);
     exit();
 }else{
     $req="select * from contact where user_id=$me and contact_id=$to union select * from contact where user_id=$to and contact_id=$me;";
     $res=mysqli_query($conn,$req)or die(mysqli_error($conn));
     if(mysqli_num_rows($res)!=2){
-        header("Location: error.html", TRUE, 301);
+        header("Location: error.php", TRUE, 301);
         exit();
     }else{
         ?>
@@ -25,12 +25,12 @@ if(empty($me) || empty($to)){
                     $date=date("Y-m-d H:i:s");
                     if($_FILES['file_upload']['name']){
                         if($_FILES['file_upload']['error']){
-                            header("location: error.html", TRUE,301);
+                            header("location: error.php", TRUE,301);
                             exit();
                         }else{
                             $file_name=date('ozGis').'@'.$me.".".strtolower(pathinfo($_FILES['file_upload']['name'],PATHINFO_EXTENSION));
                             if($_FILES['file_upload']['size'] > 5120000){
-                                header("location: error.html", TRUE,301);
+                                header("location: error.php", TRUE,301);
                                 exit();
                             }else{
                                 move_uploaded_file($_FILES['file_upload']['tmp_name'], $_SERVER['DOCUMENT_ROOT']."/public/images/messages/".$file_name);
