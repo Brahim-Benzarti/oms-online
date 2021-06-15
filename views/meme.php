@@ -15,7 +15,7 @@ session_start();
         <div class="clear"></div>
         <div class="main errorImage">
         <div class="errorMessage">
-            <p class="error404">Yeah Us too!!</p>
+            <p class="error404">Yeah... Us too!!</p>
         </div>
         <div class="errorMessage nomar">
             <a id="button" href="account.php">Go back</a>
