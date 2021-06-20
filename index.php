@@ -17,7 +17,7 @@ session_start();
         </nav>
         <div class="clear"></div>
         <?php 
-        if(isset($_SESSION['id'])){
+        if(!isset($_SESSION['id'])){
         ?>
         <!-- content goes here -->
         <div class="main">
