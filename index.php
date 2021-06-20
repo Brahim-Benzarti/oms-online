@@ -11,7 +11,7 @@ session_start();
         <nav>
             <div class="logo"></div>
             <ul>
-                <li><a href="">Home</a></li>
+                <li><a href="index.php">Home</a></li>
                 <li><a href="./views/sign_in.php">Account</a></li>
             </ul>
         </nav>

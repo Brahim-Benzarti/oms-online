@@ -11,7 +11,7 @@
 		<nav>
 			<div class="logo"></div>
 			<ul>
-				<li><a href="../index.html">Home</a></li>
+				<li><a href="../index.php">Home</a></li>
 				<li><a href="./sign_in.php">Account</a></li>
 			</ul>
         </nav>
