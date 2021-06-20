@@ -1,11 +1,10 @@
+<?php 
+session_start();
+?>
 <!doctype html>
 <html>
     <head>
-        <meta charset="utf-8">
-        <title>oms</title>
-        <script type="text/javascript" src="./public/javascript/global_functions.js"></script>    
-        <link rel="stylesheet" type="text/css" href="./public/stylesheet/stylesheet.css">
-        <link rel="icon" href="../public/images/icon.png">
+        <?php require './_/head.php' ?>
     </head>
 
     <body>
@@ -17,6 +16,10 @@
             </ul>
         </nav>
         <div class="clear"></div>
+        <?php 
+        if(isset($_SESSION['id'])){
+        ?>
+        <!-- content goes here -->
         <div class="main">
             <!-- <div class="t0"></div> -->
             <div class="left">
@@ -55,12 +58,15 @@
                     <source src="./public/images/globe.mp4" type="video/mp4">
                 </video>
             </div>
-            
-            <!-- <input class="logo_image" type="image" src="./public/images/laptop_preview.png" alt="logo"> -->
-            
-            
-            
         </div>
+        <?php
+        }else{
+            header("Location: ./account.php", TRUE, 301);
+            exit();
+        }?>
 
+        <footer>
+
+        </footer>
     </body>
 </html>
