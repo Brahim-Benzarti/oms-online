@@ -1,28 +1,22 @@
-<?php 
-session_start();
-?>
 <!doctype html>
 <html>
     <head>
-        <?php require './_/head.php' ?>
+        <meta charset="utf-8">
+        <title>oms</title>
+        <script type="text/javascript" src="./public/javascript/global_functions.js"></script>    
+        <link rel="stylesheet" type="text/css" href="./public/stylesheet/stylesheet.css">
+        <link rel="icon" href="../public/images/icon.png">
     </head>
 
     <body>
         <nav>
             <div class="logo"></div>
             <ul>
-                <li><a href="index.php">Home</a></li>
+                <li><a href="">Home</a></li>
                 <li><a href="./views/sign_in.php">Account</a></li>
             </ul>
         </nav>
         <div class="clear"></div>
-        <?php 
-        if(isset($_SESSION['id'])){
-            header("Location: ./views/account.php", TRUE, 301);
-            exit();
-        };
-        ?>
-        <!-- content goes here -->
         <div class="main">
             <!-- <div class="t0"></div> -->
             <div class="left">
@@ -48,7 +42,7 @@ session_start();
                                 <input id="button" type="submit" value="Sign In" name="sign_in">
                             </div>
                             <div class="forget_pass">
-                                <a id="forget_pass" href="./views/meme.php">Forgot password?</a>
+                                <a id="forget_pass" href="">Forgot password?</a>
                             </div>
                         </div>
                         <div class="clear_only"></div>
@@ -61,6 +55,12 @@ session_start();
                     <source src="./public/images/globe.mp4" type="video/mp4">
                 </video>
             </div>
+            
+            <!-- <input class="logo_image" type="image" src="./public/images/laptop_preview.png" alt="logo"> -->
+            
+            
+            
         </div>
+
     </body>
 </html>
