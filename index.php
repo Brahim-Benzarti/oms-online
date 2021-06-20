@@ -18,7 +18,7 @@ session_start();
         <div class="clear"></div>
         <?php 
         if(isset($_SESSION['id'])){
-            header("Location: ./account.php", TRUE, 301);
+            header("Location: ./views/account.php", TRUE, 301);
             exit();
         };
         ?>
