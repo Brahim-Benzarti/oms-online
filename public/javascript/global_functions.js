@@ -46,3 +46,23 @@ ref_to_sen=()=>{
         document.getElementById('submit').value="Refresh";
     }
 }
+
+filter=()=>{
+    key=document.getElementsByClassName("search")[0].value;
+    for(i=0;i<document.getElementsByClassName("filter").length;i++){
+        if(document.getElementsByClassName("filter")[i].innerHTML.search(key)==-1){
+            document.getElementsByClassName("filtering")[i].classList.add("hidden");
+        }else{
+            document.getElementsByClassName("filtering")[i].classList.remove("hidden");
+        }
+    }
+}
+
+new_message=()=>{
+    for(i=0;i<document.getElementsByClassName("initial").length;i++){
+        document.getElementsByClassName("initial")[i].classList.add("hidden");
+    }
+    document.getElementsByClassName("new_message")[0].classList.remove("hidden");
+
+}
+

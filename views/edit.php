@@ -24,21 +24,22 @@ session_start();
         <?php if(empty($_POST['edit'])){ ?>
             <div class="main">
                 <div class="profile_picture_container">
-                    <div class="profile_picture" <?php if($info['User_picture']<>''){ ?>style="background-image: url(<?php echo('../public/images/users/'.$info['User_picture']); ?>);" <?php }; ?>></div>
+                <label for="profile_picture">
+                    <div class="profile_picture" <?php if($info['User_picture']<>''){ ?>style="background-image: url(<?php echo('../public/images/users/'.$info['User_picture']); ?>);" <?php }; ?>><div class="profile_picture_change_effect"></div></div>
+                    
+                </label>
                 </div>
                 <div class="signing_container">
                 <form action="" method="POST" onsubmit="verify_sign_up_info();" enctype="multipart/form-data">
-                    
+                    <input class="hidden" type="file" name="profile_picture" id="profile_picture" accept="image/png, image/jpeg, image/jpg">
                     <div class="info sign_up">
                         <div class="labels">
-                            <label for="profile_picture">Change Picture:</label>
                             <label for="name">Name:</label>
                             <label for="password">Password:</label>
                             <label for="pn">Phone number:</label>
                             <label for="description">Description:</label>
                         </div>
                         <div class="inputs">
-                            <input type="file" name="profile_picture" id="profile_picture" accept="image/png, image/jpeg, image/jpg">
                             <input type="text" id="name" name="name" placeholder="<?php echo($info[1]); ?>">
                             <input type="password" id="password" name="password">
                             <input type="tel" id="pn" pattern="[0-9]{2}[0-9]{3}[0-9]{3}" name="pn" placeholder="<?php echo($info[4]); ?>">

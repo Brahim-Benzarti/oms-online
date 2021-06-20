@@ -20,23 +20,25 @@ if(empty($me) || empty($to)){
         ?>
         <?php 
             if(!empty($_POST)){
-                $new_message=$_POST['text_message'];
-                if(!empty($new_message)){
-                    $date=date("Y-m-d H:i:s");
-                    if($_FILES['file_upload']['name']){
-                        if($_FILES['file_upload']['error']){
+                if($_FILES['file_upload']['name']){
+                    if($_FILES['file_upload']['error']){
+                        header("location: error.php", TRUE,301);
+                        exit();
+                    }else{
+                        $file_name=date('ozGis').'@'.$me.".".strtolower(pathinfo($_FILES['file_upload']['name'],PATHINFO_EXTENSION));
+                        if($_FILES['file_upload']['size'] > 5120000){
                             header("location: error.php", TRUE,301);
                             exit();
                         }else{
-                            $file_name=date('ozGis').'@'.$me.".".strtolower(pathinfo($_FILES['file_upload']['name'],PATHINFO_EXTENSION));
-                            if($_FILES['file_upload']['size'] > 5120000){
-                                header("location: error.php", TRUE,301);
-                                exit();
-                            }else{
-                                move_uploaded_file($_FILES['file_upload']['tmp_name'], $_SERVER['DOCUMENT_ROOT']."/public/images/messages/".$file_name);
-                            }
+                            move_uploaded_file($_FILES['file_upload']['tmp_name'], $_SERVER['DOCUMENT_ROOT']."/public/images/messages/".$file_name);
                         }
                     }
+                }else{
+                    $file_name="";
+                }
+                $new_message=$_POST['text_message'];
+                if(!empty($new_message) || !empty($file_name)){
+                    $date=date("Y-m-d H:i:s");
                     $req="INSERT INTO message(Date,text,file,sender_id,receiver_id)
                             VALUES ('$date','$new_message','$file_name',$me,$to);";
                     mysqli_query($conn, $req)or die(mysqli_error($conn));
@@ -55,6 +57,16 @@ if(empty($me) || empty($to)){
 
         <div class="messages">
             <?php 
+            $req="select Message_id
+            from message, users
+            where receiver_id=$me and sender_id=$to and user_id=sender_id and seen=0;";
+            $res=mysqli_query($conn,$req)or die(mysqli_error());
+            if(mysqli_num_rows($res)!=0){
+                while($l=mysqli_fetch_array($res)){
+                    $ll=$l[0];
+                    mysqli_query($conn,"update message set seen=1 where Message_id=$ll;")or die(mysqli_error());
+                }
+            }
             $req="select User_name,text,date,User_id,file
                     from message, users
                     where receiver_id=$me and sender_id=$to and user_id=sender_id
@@ -82,13 +94,13 @@ if(empty($me) || empty($to)){
         <div class="texting_area"  name="f1">
             <form action="#texting_box" method="POST" onsubmit="message_auth();" enctype="multipart/form-data">
                 <!-- <input type="text" name="text_message" id="message" oninput="ref_to_sen();"> -->
-                <textarea name="text_message" id="message" id="message" onfocusin="messaging_features(0);" onfocusout="messaging_features(1)" oninput="ref_to_sen();"></textarea>
+                <input type="text" name="text_message" id="message" id="message" onfocusin="messaging_features(0);" onfocusout="messaging_features(1)" oninput="ref_to_sen();">
                 <div class="text_features" id="text_features">
                     <div class="file_picture">
                         <label for="file_upload"></label>
                     </div>
                 </div>
-                <input type="file" id="file_upload" name="file_upload" accept="image/png, image/jpeg, image/jpg">
+                <input type="file" id="file_upload" name="file_upload" accept="image/png, image/jpeg, image/jpg" oninput="ref_to_sen();">
                 <input type="submit" value="Refresh" id="submit">
             </form>
         </div>

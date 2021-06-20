@@ -368,17 +368,14 @@ iframe{
 }
 
 .main .right{
-    position: fixed;
-    right: 5vw;
     margin-top: 0;
     height: inherit;
-    padding-right: 8vw;
 }
 
 .main .right video{
     height: inherit;
     margin: auto;
-    width: fit-content;
+    width: 40vw;
 }
 
 /* friends page */
@@ -508,13 +505,21 @@ iframe{
     margin-bottom: 3vh;
 }
 
-.profile_picture, .profile_picture_inbox{
-    background-image: url("../images/dummy.png");
+.profile_picture_container label, .profile_picture_change_effect, .profile_picture, .profile_picture_inbox{
     height: inherit;
     width: inherit;
     border-radius: 50%;
     background-size: cover;
     background-position: center;
+}
+
+.profile_picture, .profile_picture_inbox{
+    background-image: url("../images/dummy.png");
+}
+
+.profile_picture_change_effect:hover{
+    cursor: pointer;
+    background-image: url("../images/change.png");
 }
 
 .person div{
@@ -543,17 +548,26 @@ iframe{
 }
 
 
-.status{
+.status, .not_seen{
     border-radius: 50%;
     width: 1vw;
     height: 1vw;
     margin-left: 2.2vw;
     margin-top: -0.8vw;
+    color: white;
+}
+
+.not_seen{
+    margin-top: -3.3vw;
+    background-color: red;
+    font-size: .9vw;
+    text-align: center;
 }
 
 .connected{
     background-color: rgb(51, 255, 0);
 }
+
 
 /* end profile picture */
 
@@ -579,3 +593,20 @@ iframe{
     background-size: 50vw 60vh;
     background-position: center;
 }
+
+/* account adding new message field */
+
+
+.new_message .search{
+    border-radius: 10px;
+    margin: 3vh 10%;
+    width: 75%;
+    border: 1px;
+}
+
+.hidden{
+    position: absolute;
+    top: -10000px;
+    visibility: hidden;
+}
+/* end account adding new message field */

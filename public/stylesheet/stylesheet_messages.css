@@ -97,10 +97,11 @@ body{
 }
 
 .messages .picture_message{
-    height: 500px;
-    width: 500px;
+    height: 20vh;
+    width: 20vw;
     background-repeat: no-repeat;
-    background-size: cover;
+    background-size: contain;
+    background-position: center;
 }
 
 .texting_area{
