@@ -17,7 +17,10 @@ session_start();
         </nav>
         <div class="clear"></div>
         <?php 
-        if(empty($_SESSION['id'])){
+        if(isset($_SESSION['id'])){
+            header("Location: ./account.php", TRUE, 301);
+            exit();
+        };
         ?>
         <!-- content goes here -->
         <div class="main">
@@ -59,14 +62,5 @@ session_start();
                 </video>
             </div>
         </div>
-        <?php
-        }else{
-            header("Location: ./account.php", TRUE, 301);
-            exit();
-        }?>
-
-        <footer>
-
-        </footer>
     </body>
 </html>
