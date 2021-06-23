@@ -536,15 +536,15 @@ iframe{
 }
 
 .profile_picture_inbox{
-    width: 3vw;
-    height: 3vw;
+    width: 50px;
+    height: 50px;
 }
 
 .main .connections div .profile_picture_container_inbox{
     width:15%;
 }
 .main .connections div .profile_picture_inbox{
-    width:80%;
+    width:50px;
 }
 
 

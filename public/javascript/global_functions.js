@@ -48,9 +48,9 @@ ref_to_sen=()=>{
 }
 
 filter=()=>{
-    key=document.getElementsByClassName("search")[0].value;
+    key=document.getElementsByClassName("search")[0].value.toUpperCase();
     for(i=0;i<document.getElementsByClassName("filter").length;i++){
-        if(document.getElementsByClassName("filter")[i].innerHTML.search(key)==-1){
+        if(document.getElementsByClassName("filter")[i].innerHTML.toUpperCase().search(key)==-1){
             document.getElementsByClassName("filtering")[i].classList.add("hidden");
         }else{
             document.getElementsByClassName("filtering")[i].classList.remove("hidden");
