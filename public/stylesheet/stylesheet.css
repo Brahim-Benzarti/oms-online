@@ -289,8 +289,23 @@ nav a:active,nav .sign_out:active{
     background-color: #ff6666;
 }
 
+.back_to_inbox{
+    background-image: url('../images/inbox_0.png');
+    background-position: center;
+    background-size: cover;
+    position: absolute;
+    bottom: 30px;
+    right: 30px;
+    height: 50px;
+    width: 50px;
+}
+
+.back_to_inbox:hover{
+    background-image: url('../images/inbox_1.png');
+}
 
 .main .people{
+    position: relative;
     background-color: black;
     width: 20%;
     height: inherit;

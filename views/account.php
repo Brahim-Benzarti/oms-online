@@ -103,6 +103,7 @@ session_start();
                         </div>
                     </div>
                 </div>
+                <a href="./account.php" class="back_to_inbox hidden"></a>
             </div>
             <div class="message_box">
                 <iframe id="iframe_box" src="<?php if(isset($_GET['message'])){echo('./messaging.php?to='.$_GET['message'].'#texting_box');} ?>" frameborder="0" name="messaging_box"></iframe>

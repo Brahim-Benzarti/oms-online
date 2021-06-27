@@ -1,4 +1,4 @@
-<div class="logo"></div>
+<a class="logo" href="../index.html"></a>
 <ul>
     <li><a href="account.php">Inbox</a></li>
     <li><a href="friends.php">Friends</a></li>
