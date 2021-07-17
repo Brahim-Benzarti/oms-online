@@ -30,7 +30,6 @@ if(!$conn){
     echo("<script>alert('will be creating data base v2');</script>");
     $req="select * from users limit 1;";
     $res=mysqli_query($conn,$req);
-    
     if(!$res){
         echo("<script>alert('Creating!!');</script>");
         $conn=mysqli_connect($servername, $username, $password, $dbname);
@@ -47,6 +46,7 @@ if(!$conn){
                 //Prepare next result set
             } while (mysqli_next_result($conn));
         }
+        echo("<script>alert('Done!!');</script>");
     }
 }
 ?>
