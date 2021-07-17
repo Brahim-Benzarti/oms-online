@@ -28,7 +28,7 @@ if(!$conn){
     }
 }else{
     echo("<script>alert('will be creating data base v2');</script>");
-    $req="select * from users limit 1;";
+    $req="SELECT * FROM users LIMIT 1;";
     $res=mysqli_query($conn,$req);
     if(!$res){
         echo("<script>alert('Creating!!');</script>");
