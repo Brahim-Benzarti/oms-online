@@ -30,6 +30,7 @@ if(!$conn){
     echo("<script>alert('creating data base v2');</script>");
     $req="select * from users limit 1;";
     $res=mysqli_query($conn,$req);
+    echo("<script>alert('nice');</script>");
     if((mysqli_num_rows($res)==0)||(!$res)){
         $conn=mysqli_connect($servername, $username, $password, $dbname);
         if(mysqli_multi_query($conn,file_get_contents("../oms.sql"))){
