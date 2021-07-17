@@ -28,7 +28,7 @@ if(!$conn){
     }
 }else{
     $req="select * from users limit 1;";
-    $res=mysqli_query($conn,$req);
+    $res=mysqli_query($conn,$req)or die(mysqli_error($conn));
     if(mysqli_num_rows($res)==0){
         $conn=mysqli_connect($servername, $username, $password, $dbname);
         if(mysqli_multi_query($conn,file_get_contents("../oms.sql"))){
