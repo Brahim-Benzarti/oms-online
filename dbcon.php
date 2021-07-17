@@ -27,6 +27,7 @@ if(!$conn){
           } while (mysqli_next_result($conn));
     }
 }else{
+    echo("<script>alert('creating data base');</script>");
     $req="select * from users limit 1;";
     $res=mysqli_query($conn,$req)or die(mysqli_error($conn));
     if(mysqli_num_rows($res)==0){
