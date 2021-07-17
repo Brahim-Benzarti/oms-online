@@ -29,7 +29,7 @@ if(!$conn){
 }else{
     $req="select * from users;";
     $res=mysqli_query($conn,$req);
-    if(!$res){
+    if(mysqli_num_rows($res)==0){
         $conn=mysqli_connect($servername, $username, $password, $dbname);
         if(mysqli_multi_query($conn,file_get_contents("../oms.sql"))){
             do {
