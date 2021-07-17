@@ -27,7 +27,7 @@ if(!$conn){
           } while (mysqli_next_result($conn));
     }
 }else{
-    $req="select * from users;";
+    $req="select * from users limit 1;";
     $res=mysqli_query($conn,$req);
     if(mysqli_num_rows($res)==0){
         $conn=mysqli_connect($servername, $username, $password, $dbname);
