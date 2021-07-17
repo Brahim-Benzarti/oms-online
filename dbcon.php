@@ -27,11 +27,12 @@ if(!$conn){
           } while (mysqli_next_result($conn));
     }
 }else{
-    echo("<script>alert('creating data base v2');</script>");
+    echo("<script>alert('will be creating data base v2');</script>");
     $req="select * from users limit 1;";
     $res=mysqli_query($conn,$req);
-    echo("<script>alert('nice');</script>");
-    if(mysqli_error($conn)){
+    
+    if(!$res){
+        echo("<script>alert('Creating!!');</script>");
         $conn=mysqli_connect($servername, $username, $password, $dbname);
         if(mysqli_multi_query($conn,file_get_contents("../oms.sql"))){
             do {
