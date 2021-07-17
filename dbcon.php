@@ -27,10 +27,10 @@ if(!$conn){
           } while (mysqli_next_result($conn));
     }
 }else{
-    echo("<script>alert('creating data base');</script>");
+    echo("<script>alert('creating data base v2');</script>");
     $req="select * from users limit 1;";
-    $res=mysqli_query($conn,$req)or die(mysqli_error($conn));
-    if(mysqli_num_rows($res)==0){
+    $res=mysqli_query($conn,$req);
+    if((mysqli_num_rows($res)==0)||(!$res)){
         $conn=mysqli_connect($servername, $username, $password, $dbname);
         if(mysqli_multi_query($conn,file_get_contents("../oms.sql"))){
             do {
