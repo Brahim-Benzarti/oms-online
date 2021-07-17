@@ -9,10 +9,10 @@ $conn=mysqli_connect($servername, $username, $password, $dbname);
 
 //creating database if doesn't exits.. 
 if(!$conn){
+    echo("<script>alert('creating data base');</script>");
     $pre_conn=mysqli_connect($servername, $username, $password);
     mysqli_query($pre_conn,"CREATE Database oms;")or die("wtf");
     $conn=mysqli_connect($servername, $username, $password, $dbname);
-    if(!$conn){die("shit")};
     if(mysqli_multi_query($conn,file_get_contents("../oms.sql"))){
         do {
             // Store first result set
