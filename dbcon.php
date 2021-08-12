@@ -1,9 +1,9 @@
 <?php
 
-$servername="sql5.freesqldatabase.com";
-$username="sql5426001";
-$password="BfXiJhKS9a";
-$dbname="sql5426001";
+$servername="sql200.epizy.com";
+$username="epiz_29168269";
+$password="d95ETj3hIN";
+$dbname="epiz_29168269_XXX";
 
 $conn=mysqli_connect($servername, $username, $password, $dbname);
 
