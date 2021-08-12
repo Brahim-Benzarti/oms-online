@@ -3,7 +3,7 @@
 $servername="sql200.epizy.com";
 $username="epiz_29168269";
 $password="d95ETj3hIN";
-$dbname="epiz_29168269_XXX";
+$dbname="epiz_29168269_test";
 
 $conn=mysqli_connect($servername, $username, $password, $dbname);
 
