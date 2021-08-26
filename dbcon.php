@@ -1,9 +1,9 @@
 <?php
 
-$servername="sql200.epizy.com";
-$username="epiz_29168269";
-$password="d95ETj3hIN";
-$dbname="epiz_29168269_test";
+$servername="bjjkoe7xxlft2qoeskmi-mysql.services.clever-cloud.com";
+$username="uenajqughr0qvjhx";
+$password="lleMCtdIae4xr0HlTe9C";
+$dbname="bjjkoe7xxlft2qoeskmi";
 
 $conn=mysqli_connect($servername, $username, $password, $dbname);
 
